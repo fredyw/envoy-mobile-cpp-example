@@ -13,7 +13,7 @@ std::shared_ptr<Envoy::Platform::Engine> createEngine() {
   engine_builder.setOnEngineRunning(
       [&engine_running] { engine_running.Notify(); });
   auto engine = engine_builder.build();
-  // Wait until the Engin is ready.
+  // Wait until the Engine is ready.
   engine_running.WaitForNotification();
   return engine;
 }
